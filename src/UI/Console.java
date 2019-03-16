@@ -4,6 +4,8 @@ import Domain.RoomAverageRating;
 import Service.RoomService;
 import java.util.Scanner;
 
+import static java.lang.Integer.*;
+
 
 public class Console {
     private RoomService service;
@@ -44,11 +46,11 @@ public class Console {
     private void handleRoomExit () {
         try {
             System.out.println ("Write the room number:");
-            int roomNumber = Integer.parseInt(scanner.nextLine());
+            int roomNumber = parseInt(scanner.nextLine());
             System.out.println ("Write the feedback:");
             String feedback = scanner.nextLine();
             System.out.println ("Write the room rating:");
-            int rating = Integer.parseInt(scanner.nextLine());
+            int rating = parseInt(scanner.nextLine());
             service.checkOut(roomNumber, feedback, rating);
         } catch (RuntimeException runtimeException) {
             System.out.println("There are errors: " + runtimeException.getMessage());
@@ -62,13 +64,13 @@ public class Console {
     private void handleRoomEntry (){
         try {
         System.out.println ("Write the room id:");
-        int id = Integer.parseInt(scanner.nextLine());
+        int id = scanner.nextInt();
         System.out.println ("Write the room number:");
-        int roomNumber = Integer.parseInt(scanner.nextLine());
+        int roomNumber = scanner.nextInt();
         System.out.println ("Write the number of persons:");
-        int numberOfPersons = Integer.parseInt(scanner.nextLine());
+        int numberOfPersons = scanner.nextInt();;
         System.out.println ("Write the number of days:");
-        int days = Integer.parseInt(scanner.nextLine());
+        int days = scanner.nextInt();
         service.checkIn(id, roomNumber, numberOfPersons, days);
     } catch (RuntimeException runtimeException) {
         System.out.println("There are errors: " + runtimeException.getMessage());
