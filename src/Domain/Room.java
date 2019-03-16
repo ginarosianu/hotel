@@ -14,9 +14,6 @@ public class Room {
         this.numberOfPersons = numberOfPersons;
         this.roomNumber = roomNumber;
         this.days = days;
-        this.feedback = feedback;
-        this.rating = rating;
-        this.available = available;
     }
 
     @Override

@@ -68,7 +68,7 @@ public class Console {
         System.out.println ("Write the room number:");
         int roomNumber = scanner.nextInt();
         System.out.println ("Write the number of persons:");
-        int numberOfPersons = scanner.nextInt();;
+        int numberOfPersons = scanner.nextInt();
         System.out.println ("Write the number of days:");
         int days = scanner.nextInt();
         service.checkIn(id, roomNumber, numberOfPersons, days);

@@ -14,10 +14,10 @@ public class RoomValidator {
             throw new RuntimeException("This room does not exist");
         }
         String feedback = room.getFeedback();
-        if (feedback.isEmpty()){
+        if (feedback != null && feedback.isEmpty()){
             throw new RuntimeException("There is no given feedback");
         }
-        if (room.getRating()>=1 && room.getRating()<=5){
+        if ((room.getRating() != 0) &&(room.getRating()<1 || room.getRating()> 5)){
             throw new RuntimeException("Rating must be a number between 1 and 5");
         }
     }
