@@ -2,6 +2,7 @@ package UI;
 import Domain.Room;
 import Domain.RoomAverageRating;
 import Service.RoomService;
+
 import java.util.Scanner;
 
 import static java.lang.Integer.*;
@@ -46,11 +47,12 @@ public class Console {
     private void handleRoomExit () {
         try {
             System.out.println ("Write the room number:");
-            int roomNumber = parseInt(scanner.nextLine());
+            int roomNumber = scanner.nextInt();
             System.out.println ("Write the feedback:");
+            scanner.nextLine();
             String feedback = scanner.nextLine();
             System.out.println ("Write the room rating:");
-            int rating = parseInt(scanner.nextLine());
+            int rating = scanner.nextInt();
             service.checkOut(roomNumber, feedback, rating);
         } catch (RuntimeException runtimeException) {
             System.out.println("There are errors: " + runtimeException.getMessage());
